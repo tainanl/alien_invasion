@@ -8,7 +8,6 @@ class Alien(Sprite):
         '''初始化外星人并设置其起始位置'''
         super().__init__()
         self.screen = screen
-        self.screen = screen
         self.ai_settings = ai_settings
 
         #加载外星人图像，并设置rect属性
