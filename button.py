@@ -19,3 +19,14 @@ class Button():
 
         #按鈕的標籤只需創建一次
         self.prep_msg(msg)
+
+    def prep_msg(self, msg):
+        '''將msg渲染爲圖像，並使其在按鈕上居中'''
+        self.msg_image = self.font.render(msg, True, self.text_color, self.button_color)
+        self.msg_image_rect = self.msg_image.get_rect()
+        self.msg_image_rect.center = self.rect.center
+
+    def draw_button(self):
+        #繪制一個用顏色填充的按鈕，再繪制文本
+        self.screen.fill(self.button_color, self.rect)
+        self.screen.blit(self.msg_image, self.msg_image_rect)
